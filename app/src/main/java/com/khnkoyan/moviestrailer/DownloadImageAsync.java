@@ -17,14 +17,12 @@ public class DownloadImageAsync extends AsyncTask<String, Void, List<Bitmap>> {
 
     private Context context;
     private ImageView[] imgView;
-    private String[] imgUrl;
     private List<Bitmap> downLoadedImage;
     private ProgressDialog progressDialog;
 
     public DownloadImageAsync(Context context, ImageView... imgView) {
         this.context = context;
         this.imgView = imgView;
-        imgUrl = new String[imgView.length];
         downLoadedImage = new ArrayList<>();
     }
 
@@ -38,8 +36,7 @@ public class DownloadImageAsync extends AsyncTask<String, Void, List<Bitmap>> {
     protected List<Bitmap> doInBackground(String... params) {
         try {
             for (int i = 0; i < params.length; i++) {
-                imgUrl[i] = params[i];
-                URL url = new URL(imgUrl[i]);
+                URL url = new URL(params[i]);
                 InputStream in = url.openStream();
                 Bitmap bitmap = BitmapFactory.decodeStream(in);
                 downLoadedImage.add(bitmap);
