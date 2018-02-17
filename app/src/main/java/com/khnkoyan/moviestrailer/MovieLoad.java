@@ -1,6 +1,7 @@
 package com.khnkoyan.moviestrailer;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.khnkoyan.moviestrailer.models.Movie;
@@ -48,7 +49,7 @@ public class MovieLoad {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-               // Toast.makeText(context, "failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "failed", Toast.LENGTH_SHORT).show();
             }
 
             @Override

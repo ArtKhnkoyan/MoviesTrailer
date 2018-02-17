@@ -28,7 +28,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MoviesInfo"/>>
+                android:value=".activities.MoviesInfo"/>
         </activity>
         <activity
             android:name=".activities.MoviesTrailerActivity"
